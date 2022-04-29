@@ -1,0 +1,15 @@
+dotnet tool tutorial: https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools-how-to-create
+
+1. create src folder
+2. create proj (e.g: dotnet new console -n NAME -f FRAMEWORK)
+3. ...
+4. package the tool
+    i) add to propertygroup in project file
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName> NAME </ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    ii) dotnet pack
+5. install (local) tool: https://docs.microsoft.com/en-us/dotnet/core/tools/local-tools-how-to-use
+    i) navigate to src folder
+    ii) create manifest: dotnet new tool-manifest
+    iii) install the tool: dotnet tool install --add-source ./PROJECT_FOLDER_NAMEmicrosoft.botsay/nupkg microsoft.botsay
